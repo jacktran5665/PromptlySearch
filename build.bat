@@ -1,21 +1,18 @@
 @echo off
-echo Building SearchHotKey executable...
+echo Building Promptly executable...
 echo.
 
-:: Install PyInstaller if not present
 pip install pyinstaller
 
-:: Build the executable
-pyinstaller --onefile --noconsole --name "SearchHotKey" --icon=NONE search_hotkey.py
+pyinstaller --onefile --noconsole --name "Promptly" --icon=NONE promptly.pyw
 
-:: Copy the executable to main folder
-if exist "dist\SearchHotKey.exe" (
-    copy "dist\SearchHotKey.exe" "SearchHotKey.exe"
+if exist "dist\Promptly.exe" (
+    copy "dist\Promptly.exe" "Promptly.exe"
     echo.
     echo ✓ Build successful! 
-    echo ✓ SearchHotKey.exe created in current folder
+    echo ✓ Promptly.exe created in current folder
     echo.
-    echo You can now double-click SearchHotKey.exe to run the app!
+    echo You can now double-click Promptly.exe to run the app!
 ) else (
     echo ✗ Build failed!
 )
